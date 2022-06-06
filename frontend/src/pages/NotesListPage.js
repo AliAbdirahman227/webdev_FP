@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import ListItem from '../components/ListItem'
 import AddButton from '../components/AddButton'
+import { Link } from 'react-router-dom'
+import schedule from './schedule'
+import {
+    HashRouter as Router,
+    Route
+  } from "react-router-dom";
 
 
 const NotesListPage = () => {
@@ -21,9 +27,11 @@ const NotesListPage = () => {
 
     return (
         <div className="notes">
+            
             <div className="notes-header">
                 <h2 className="notes-title">&#9782; Notes</h2>
                 <p className="notes-count">{notes.length}</p>
+                
             </div>
 
             <div className="notes-list">
@@ -32,7 +40,16 @@ const NotesListPage = () => {
                 ))}
             </div>
             <AddButton />
+            <Router>
+                <div className="scheduler">                    
+                    <Route path="/schedule" component={schedule} />
+                    <Link to={`/schedule`}>
+                        <div className="notes-header" >scheduler</div>
+                    </Link>
+                </div>
+            </Router>
         </div>
+        
     )
 }
 

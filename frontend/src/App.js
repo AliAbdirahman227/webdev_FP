@@ -8,6 +8,7 @@ import './App.css';
 import Header from './components/Header'
 import NotesListPage from './pages/NotesListPage'
 import NotePage from './pages/NotePage'
+import schedule from './pages/schedule'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Header />
           <Route path="/" exact component={NotesListPage} />
           <Route path="/note/:id" component={NotePage} />
+          <Route path="/schedule" component={schedule} />
         </div>
       </div>
     </Router>
