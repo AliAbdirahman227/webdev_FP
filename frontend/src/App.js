@@ -4,11 +4,13 @@ import {
 } from "react-router-dom";
 
 
-import './App.css';
+import './styles.css';
 import Header from './components/Header'
-import NotesListPage from './pages/NotesListPage'
-import NotePage from './pages/NotePage'
+import EntrysListPage from './pages/EntrysListPage'
+import EntryPage from './pages/EntryPage'
 import schedule from './pages/schedule'
+import Login from './pages/Login'
+import Registeration from './pages/Registeration'
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
       <div className="container dark">
         <div className="app">
           <Header />
-          <Route path="/" exact component={NotesListPage} />
-          <Route path="/note/:id" component={NotePage} />
+          <Route path="/login" component={Login} />
+          <Route path="/" exact component={Registeration} />
+          <Route path="/note" exact component={EntrysListPage} />
+          <Route path="/note/:id" component={EntryPage} />
           <Route path="/schedule" component={schedule} />
         </div>
       </div>

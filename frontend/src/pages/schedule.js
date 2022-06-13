@@ -13,7 +13,7 @@ import {
   Route
 } from "react-router-dom";
 import { Link } from 'react-router-dom'
-import NoteListPage from './NotesListPage'
+import EntryListPage from './EntrysListPage'
 
 
 const locales = {
@@ -58,9 +58,9 @@ function App() {
         <div className="App">
             <Router>
                 <div className="scheduler">                    
-                    <Route path="/" exact component={NoteListPage} />
-                    <Link to={`/`}>
-                        <div className="notes-header" >Home Page</div>
+                    <Route path="/" exact component={EntryListPage} />
+                    <Link to={`/note`}>
+                        <div className="entrys-header" >Home Page</div>
                     </Link>
                 </div>
             </Router>
@@ -74,7 +74,7 @@ function App() {
                     Add Reminder
                 </button>
             </div>
-            <Calendar localizer={localizer} events={allEvents} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
+            <Calendar localizer={localizer} events={allEvents} startAccessor="start" endAccessor="end" style={{ height: 400, margin: 20, width: 450 }} />
 
         </div>
     );

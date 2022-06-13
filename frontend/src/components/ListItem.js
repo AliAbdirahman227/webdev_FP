@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-let getTime = (note) => {
-    return new Date(note.updated).toLocaleDateString()
+let getTime = (entry) => {
+    return new Date(entry.updated).toLocaleDateString()
 }
 
-let getTitle = (note) => {
+let getTitle = (entry) => {
 
-    let title = note.body.split('\n')[0]
+    let title = entry.body.split('\n')[0]
     if (title.length > 45) {
         return title.slice(0, 45)
     }
@@ -15,9 +15,9 @@ let getTitle = (note) => {
 }
 
 
-let getContent = (note) => {
-    let title = getTitle(note)
-    let content = note.body.replaceAll('\n', ' ')
+let getContent = (entry) => {
+    let title = getTitle(entry)
+    let content = entry.body.replaceAll('\n', ' ')
     content = content.replaceAll(title, '')
 
     if (content.length > 45) {
@@ -28,12 +28,12 @@ let getContent = (note) => {
 }
 
 
-const ListItem = ({ note }) => {
+const ListItem = ({ entry }) => {
     return (
-        <Link to={`/note/${note.id}`}>
-            <div className="notes-list-item" >
-                <h3>{getTitle(note)}</h3>
-                <p><span>{getTime(note)}</span>{getContent(note)}</p>
+        <Link to={`/note/${entry.id}`}>
+            <div className="entrys-list-item" >
+                <h3>{getTitle(entry)}</h3>
+                <p><span>{getTime(entry)}</span>{getContent(entry)}</p>
             </div>
 
         </Link>
