@@ -26,4 +26,6 @@ How to run it:
 
 - Horray you can use our web app NOW!
 
+Thanks!
+
 credit: I got some help from Dennis, mainly style, icons and some frontend
