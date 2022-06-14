@@ -75,6 +75,26 @@
     outline: 0;
     box-shadow: none;
 }
+.signout{
+  font-size: 15px;
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  background: #ef4e7b;
+  border: none;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+.signout:hover{
+  background-color: red;
+  cursor: pointer;
+}
 .reg-button{
   border: none;
   padding: 1em;
