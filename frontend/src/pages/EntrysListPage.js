@@ -3,10 +3,12 @@ import ListItem from '../components/ListItem'
 import AddButton from '../components/AddButton'
 import { Link } from 'react-router-dom'
 import schedule from './schedule'
+import login from './Login'
 import {
     HashRouter as Router,
     Route
   } from "react-router-dom";
+
 
 
 const EntrysListPage = () => {
@@ -32,6 +34,8 @@ const EntrysListPage = () => {
                 <h2 className="entrys-title">&#9782; Diary Entry</h2>
                 <p className="entrys-count">{entrys.length}</p>
                 
+
+                
             </div>
 
             <div className="entrys-list">
@@ -39,7 +43,6 @@ const EntrysListPage = () => {
                     <ListItem key={index} entry={entry} />
                 ))}
             </div>
-            <AddButton />
             <Router>
                 <div className="scheduler">                    
                     <Route path="/schedule" component={schedule} />
@@ -48,6 +51,17 @@ const EntrysListPage = () => {
                     </Link>
                 </div>
             </Router>
+            <Router>
+                <div className="log-out">                    
+                    <Route path="/login" component={login} />
+                    <Link to={`/login`} id="schd-btn">
+                        <div className="signout" >sign-out</div>
+                    </Link>
+                </div>
+            </Router>
+            <AddButton />
+            
+            
         </div>
         
     )
