@@ -28,4 +28,4 @@ How to run it:
 
 Thanks!
 
-credit: I got some help from Dennis, mainly style, icons and some frontend
+credit: I got some help from Dennis on how to create project.
